@@ -10,15 +10,46 @@
     <script src="index.js"></script>
     <script src="formController.js"></script>
 
-    <div class="form" ng-controller="FormController">
-    	<input type="text" ng-model="name">
-    	<input type="text" ng-model="email">
-    	<input type="text" ng-model="website">
-    	<input type="text" ng-model="message">
+    <div class="container">
+
+      <h1>Contact Us</h1>
+
+    <form class="form" ng-controller="FormController">
+    	<p>Name:</p><input type="text" ng-model="name">
+      <div class="error" ng-show="nameError">
+        Name cannot be left empty
+      </div>
+
+    	<p>Email:</p><input type="text" ng-model="email">
+       <div class="error" ng-show="emailError">
+        Email cannot be left empty
+        </div>
+       <div class="error" ng-show="emailAddError">
+        Email must contain an '@'
+       </div>
+
+    	<p>Website:</p><input type="text" ng-model="website">
+      <div class="error" ng-show="websiteError">
+        Website cannot be left empty
+       </div>
+       <div class="error" ng-show="websiteAddError">
+        Website must contain 'http://'
+       </div>
+
+    	<p>Message:</p><textarea ng-model="message"></textarea>
+      <div class="error" ng-show="messageError">
+        Message cannot be left empty
+       </div>
 
     	<button ng-click="submitForm()">Submit</button>
 
-    </div>
+      <div class="success" ng-show="formSubmitted">
+        Form sucessfully submitted
+       </div>
+
+    </form>
+
+  </div>
     
   </body>
 </html>
