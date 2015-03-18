@@ -1,13 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="formApp">
   <head>
     <title>Form Validation</title>
-    <link href="index.css" rel="stylesheet" />
+    <link href="index.css" rel="stylesheet"/>
   </head>
   <body>
 
     <script src="libs/angular.js"></script>
     <script src="index.js"></script>
+    <script src="formController.js"></script>
+
+    <div class="form" ng-controller="FormController">
+    	<input type="text" ng-model="name">
+    	<input type="text" ng-model="email">
+    	<input type="text" ng-model="website">
+    	<input type="text" ng-model="message">
+
+    	<button ng-click="submitForm()">Submit</button>
+
+    </div>
     
   </body>
 </html>
