@@ -15,12 +15,12 @@
       <h1>Contact Us</h1>
 
     <form class="form" ng-controller="FormController">
-    	<p>Name:</p><input type="text" ng-model="name">
+    	<p>Name:</p><input type="text" name="inputName" ng-model="name" ng-class="{'invalidClass': nameInvalid}">
       <div class="error" ng-show="nameError">
         Name cannot be left empty
       </div>
 
-    	<p>Email:</p><input type="text" ng-model="email">
+    	<p>Email:</p><input type="text" ng-model="email" ng-class="{'invalidClass': emailInvalid}">
        <div class="error" ng-show="emailError">
         Email cannot be left empty
         </div>
@@ -28,7 +28,7 @@
         Email must contain an '@'
        </div>
 
-    	<p>Website:</p><input type="text" ng-model="website">
+    	<p>Website:</p><input type="text" ng-model="website" ng-class="{'invalidClass': websiteInvalid}">
       <div class="error" ng-show="websiteError">
         Website cannot be left empty
        </div>
@@ -36,7 +36,7 @@
         Website must contain 'http://'
        </div>
 
-    	<p>Message:</p><textarea ng-model="message"></textarea>
+    	<p>Message:</p><textarea ng-model="message" ng-class="{'invalidClass': messageInvalid}"></textarea>
       <div class="error" ng-show="messageError">
         Message cannot be left empty
        </div>
